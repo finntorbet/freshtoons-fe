@@ -34,7 +34,7 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 196px;
+    width: 140px;
     background-color: #000000;
     padding: 24px; /* Padding in expanded state */
     transition: width 0.3s ease, padding 0.3s ease; /* Transition for smooth collapse */
