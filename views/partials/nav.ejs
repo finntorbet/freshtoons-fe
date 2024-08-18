@@ -1,59 +1,66 @@
 <nav>
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <div class="logo">
-            <a href="#">
+            <a href="/">
                 <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="Logo" />
             </a>
         </div>
-        <div class="sidebar">
-            <div class="logo">
-                <a href="/">
-                    <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt="Logo" />
-                </a>
-            </div>
 
-            <div class="navigation">
-                <ul>
-                    <li>
-                        <a href="/">
-                            <span class="fa fa-home"></span>
-                            <span>Home</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/login" class="btn btn-primary">
-                            <span class="fa fas fa-start"></span>
-                            <span>Start</span>
-                        </a>
-                    </li>
-
-                    <li></li>
-
-                    <li>
-                        <a href="https://github.com/finntorbet/freshtoons">
-                            <span class="fa fa-book"></span>
-                            <span>Source Code</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://github.com/finntorbet">
-                            <span class="fa fas fa-profile"></span>
-                            <span>Author</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="policies">
-                <ul>
-                    <li>
-                        <a href="#">Privacy</a>
-                    </li>
-                </ul>
-            </div>
-
+        <div class="toggle">
+                <br/>
+                <button id="toggle-btn"> || <</button>
         </div>
+
+
+        <script>
+            document.getElementById('toggle-btn').addEventListener('click', function () {
+                console.log("Clicked!")
+                const sidebar = document.getElementById('sidebar');
+                sidebar.classList.toggle('sidebar-hidden');
+            });
+        </script>
+
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="/">
+                        <span class="fa fa-home"></span>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/login" class="btn btn-primary">
+                        <span class="fa fas fa-start"></span>
+                        <span>Start</span>
+                    </a>
+                </li>
+
+                <li></li>
+
+                <li>
+                    <a href="https://github.com/finntorbet/freshtoons">
+                        <span class="fa fa-book"></span>
+                        <span>Source Code</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/finntorbet">
+                        <span class="fa fas fa-profile"></span>
+                        <span>Author</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="policies">
+            <ul>
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </nav>
