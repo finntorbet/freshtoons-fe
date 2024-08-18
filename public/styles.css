@@ -130,6 +130,7 @@ body {
 .main-container {
     margin-left: 245px;
     margin-bottom: 100px;
+    transition: margin-left 0.3s ease;
 }
 
 .content {
