@@ -1,0 +1,22 @@
+{
+  "name": "freshtoons-fe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Finn Torbet",
+  "license": "ISC",
+  "description": "Frontend for the freshtoons app",
+  "dependencies": {
+    "cookie-parser": "1.4.6",
+    "cors": "2.8.5",
+    "ejs": "^3.1.10",
+    "express": "4.18.2",
+    "querystring": "~0.2.0",
+    "request": "2.88.2"
+  }
+}
