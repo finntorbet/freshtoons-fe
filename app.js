@@ -14,7 +14,9 @@ var path = require('path');
 
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
-var redirect_uri =  process.env.CALLBACK_URL; //'http://localhost:8888/callback'; 
+var redirect_uri =  process.env.CALLBACK_URL; //'http://localhost:8888/callback';
+
+console.log(redirect_uri)
 
 // your application requests authorization
 var scope = 'playlist-modify-private playlist-read-private user-library-modify';
@@ -43,11 +45,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/new_user', (req, res) => {
+    // Call Lambda
+
     res.render('new_user');
-    console.log('========')
-    console.log(req.query.access_token)
-    console.log(req.query.refresh_token)
-    console.log("========")
 });
 
 app.get('/login', function(req, res) {
@@ -108,16 +108,17 @@ app.get('/callback', function(req, res) {
         };
 
         // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
-          console.log(body);
+        var user_id;
+        request.get(options, function (error, response, body) {
+            res.redirect('/new_user?' +
+                querystring.stringify({
+                    user_id: body.id,
+                    access_token: access_token,
+                    refresh_token: refresh_token
+                }));
         });
 
-        // we can also pass the token to the browser to make requests from there
-        res.redirect('/new_user?' +
-          querystring.stringify({
-            access_token: access_token,
-            refresh_token: refresh_token
-          }));
+       
       } else {
         res.redirect('/#' +
           querystring.stringify({
